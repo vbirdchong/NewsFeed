@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_item"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:orientation="horizontal"
+    android:paddingEnd="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:paddingStart="8dp">
+
+    <TextView
+        android:id="@+id/section_name"
+        android:layout_width="72dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center_vertical"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="SectionName"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/news_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:text="Shameful shutdown of proper election debate">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/publication_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="date"
+            android:gravity="end"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="author"
+            android:gravity="end"
+            android:textSize="12sp"/>
+    </LinearLayout>
+
+</LinearLayout>
