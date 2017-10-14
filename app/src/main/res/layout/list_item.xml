@@ -11,13 +11,13 @@
 
     <TextView
         android:id="@+id/section_name"
-        android:layout_width="72dp"
+        android:layout_width="96dp"
         android:layout_height="36dp"
         android:layout_gravity="center_vertical"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
         android:text="SectionName"
-        android:textSize="16sp"/>
+        android:textSize="14sp"/>
 
     <TextView
         android:id="@+id/news_title"
