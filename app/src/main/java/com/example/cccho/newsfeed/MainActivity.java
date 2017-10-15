@@ -63,7 +63,9 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                 NewsContent item = mNewsContentAdapter.getItem(position);
                 Uri newsContentUri = Uri.parse(item.getWebUrl());
                 Intent intent = new Intent(Intent.ACTION_VIEW, newsContentUri);
-                startActivity(intent);
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
             }
         });
 
