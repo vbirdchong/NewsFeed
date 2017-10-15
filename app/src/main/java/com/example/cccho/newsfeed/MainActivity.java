@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public static final String GUARDIAN_REQUEST_URL =
             "https://content.guardianapis.com/search?";
 
+    public static final String SHOW_TAGS = "show-tags";
+
+    public static final String CONTRIBUTOR = "contributor";
+
     public static final String API_KEY = "test";
 
     public NewsContentAdapter mNewsContentAdapter;
@@ -109,6 +113,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("q", searchTerm);
+        uriBuilder.appendQueryParameter(SHOW_TAGS, CONTRIBUTOR);
         uriBuilder.appendQueryParameter("api-key", API_KEY);
 
         return new NewsContentLoader(this, uriBuilder.toString());

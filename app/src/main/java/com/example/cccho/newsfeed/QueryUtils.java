@@ -129,7 +129,7 @@ public class QueryUtils {
                 return null;
             }
 
-            //Log.i(LOG_TAG, response.toString()); // for debug
+            //Log.i(LOG_TAG, "total response: " + response.toString()); // for debug
 
             JSONArray responseResults = response.getJSONArray("results");
             for (int i = 0; i < responseResults.length(); i++) {
@@ -149,9 +149,25 @@ public class QueryUtils {
                 if (currentItem.has("webUrl")) {
                     webUrl = currentItem.getString("webUrl");
                 }
-                // TODO: 2017/10/14 其他字段 author date 实现
 
-                newsContents.add(new NewsContent(webTitle, sectionName, webUrl));
+                String webPublicationDate = "";
+                if (currentItem.has("webPublicationDate")) {
+                    webPublicationDate = currentItem.getString("webPublicationDate");
+                }
+
+                String authorWebTitle = "";
+                if (currentItem.has("tags")) {
+                    JSONArray tags = currentItem.getJSONArray("tags");
+
+                    for (int j = 0; j < tags.length(); j++) {
+                        JSONObject item = tags.getJSONObject(j);
+                        if (item.has("webTitle")) {
+                            authorWebTitle = item.getString("webTitle");
+                        }
+                    }
+                }
+
+                newsContents.add(new NewsContent(webTitle, sectionName, webUrl, webPublicationDate, authorWebTitle));
             }
         } catch (JSONException e) {
             Log.e(LOG_TAG, "Decode json info error: " + e);

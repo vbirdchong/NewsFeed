@@ -20,6 +20,8 @@ public class NewsContentAdapter extends ArrayAdapter<NewsContent> {
     static class ViewHolder {
         TextView mSectionName;
         TextView mWebTitle;
+        TextView mAuthor;
+        TextView mDate;
     }
 
     public NewsContentAdapter(Activity context, ArrayList<NewsContent> newsContents) {
@@ -38,6 +40,8 @@ public class NewsContentAdapter extends ArrayAdapter<NewsContent> {
             viewHolder = new ViewHolder();
             viewHolder.mWebTitle = (TextView) view.findViewById(R.id.news_title);
             viewHolder.mSectionName = (TextView) view.findViewById(R.id.section_name);
+            viewHolder.mAuthor = (TextView) view.findViewById(R.id.author);
+            viewHolder.mDate = (TextView) view.findViewById(R.id.publication_date);
 
             view.setTag(viewHolder);
         } else {
@@ -47,6 +51,8 @@ public class NewsContentAdapter extends ArrayAdapter<NewsContent> {
 
         viewHolder.mSectionName.setText(newsContentItem.getSectionName());
         viewHolder.mWebTitle.setText(newsContentItem.getTitle());
+        viewHolder.mAuthor.setText(newsContentItem.getAuthor());
+        viewHolder.mDate.setText(newsContentItem.getDate());
 
         return view;
     }

@@ -9,13 +9,17 @@ public class NewsContent {
     private String mTitle;
     private String mSectionName;
     private String mWebUrl;
-    private String mAuthor = null;
-    private String mDate = null;
+    private String mAuthor;
+    private String mDate;
 
-    public NewsContent(String title, String sectionName, String webUrl) {
+    private static final int DATA_MAX_LEN = 10;
+
+    public NewsContent(String title, String sectionName, String webUrl, String publicatonDate, String author) {
         mTitle = title;
         mSectionName = sectionName;
         mWebUrl = webUrl;
+        mDate = publicatonDate;
+        mAuthor = author;
     }
 
     public String getSectionName() {
@@ -28,5 +32,14 @@ public class NewsContent {
 
     public String getWebUrl() {
         return mWebUrl;
+    }
+
+    public String getAuthor() {
+        return mAuthor;
+    }
+
+    public String getDate() {
+        String ret = mDate.substring(0, DATA_MAX_LEN);
+        return ret;
     }
 }
